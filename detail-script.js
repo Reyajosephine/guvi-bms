@@ -11,16 +11,10 @@ window.onload = async () => {
 async function fetchMovieDetails(movieId) {
   try {
     const response = await fetch(
-      `https://learn-with-guvi-book-my-show-backend.onrender.com/movie/${movieId}`
+      `https://guvi-book-my-show-backend.onrender.com/movie/${movieId}`
     );
     const movie = await response.json();
 
-    // Object.entries(movie.shows).flatMap(([date,showtime]) => {
-    //     console.log(date),
-    //     showtime.map((show) => {
-    //         console.log(show)
-    //     })
-    // })
     if (response.ok) {
       const movieDetailsContainer = document.getElementById("movieDetails");
       movieDetailsContainer.innerHTML = `<div style="color: #fff; padding: 0px">
@@ -104,8 +98,14 @@ async function fetchMovieDetails(movieId) {
                 </div>
             `;
       document.body.appendChild(showContainer);
+    } else {
+      console.error("Failed to fetch movie details:", movie);
+      alert("Failed to load movie details.");
     }
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error fetching movie details:", error);
+    alert("Something went wrong while fetching movie details.");
+  }
 }
 
 document.getElementById("submitBooking").addEventListener("click", async () => {
@@ -119,7 +119,7 @@ document.getElementById("submitBooking").addEventListener("click", async () => {
 
   try {
     const response = await fetch(
-      "https://guvi-book-my-show-backend.onrender.com",
+      "https://guvi-book-my-show-backend.onrender.com/book-ticket", // Updated endpoint for booking tickets
       {
         method: "POST",
         headers: {
@@ -144,8 +144,12 @@ document.getElementById("submitBooking").addEventListener("click", async () => {
       bookingModal.hide();
       alert("Tickets booked successfully!");
       window.location.reload();
+    } else {
+      console.error("Booking failed:", result);
+      alert("Failed to book tickets. Please try again.");
     }
   } catch (error) {
+    console.error("Error booking tickets:", error);
     alert("Something Went Wrong!");
   }
 });
