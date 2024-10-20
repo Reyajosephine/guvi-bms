@@ -4,7 +4,7 @@
 
 async function fetchMovies() {
   try {
-    const response = await fetch("https://booking-app-db.onrender.com/movie/get-movies");
+    const response = await fetch("https://guvi-book-my-show-backend-4.onrender.com/movie/get-movies");
     const movies = await response.json();
     const movieCardsContainer = document.getElementById("movieCards");
     movieCardsContainer.innerHTML = "";
