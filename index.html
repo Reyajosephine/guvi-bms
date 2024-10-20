@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +20,7 @@
           class="navbar-brand"
           href="#"
           style="color: #f84464 !important; font-weight: bold"
-          >bookMyshow</a
+          >Crowd Ticket</a
         >
         <button
           class="navbar-toggler"
@@ -74,20 +73,12 @@
           </form>
         </div>
       </div>
+      <button id="darkModeToggle" class="btn btn-outline-light">Dark Mode</button>
+
     </nav>
     <div class="container mt-4">
       <div id="movieCards" class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card" style="cursor: pointer">
-            <img
-              src="https://assets-in.bmscdn.com/iedb/movies/images/website/poster/large/vettaiyan-et00379391-1727938465.jpg"
-              alt=""
-            />
-            <div class="card-body">
-              <h5 class="card-title">Indian 2</h5>
-              <p class="card-text">Drama</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -140,7 +131,7 @@
                         <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
                         <p>123 Movie Lane, Cinema City, NY 10012, US</p>
                         <p>
-                            support@bookmyshow.com
+                            support@crowdticket.com
                         </p>
                         <p>+1 234 567 8900</p>
                         <p>+1 234 567 8901</p>
@@ -155,7 +146,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2024 Book My Show:
-            <a class="text-reset fw-bold" href="https://www.bookmyshow.com/">bookmyshow.com</a>
+            <a class="text-reset fw-bold" href="https://www.crowdticket.com/">crowdticket.com</a>
         </div>
         <!-- Copyright -->
     </footer>
@@ -163,3 +154,60 @@
 
   </body>
 </html>
+
+<style>
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  }
+
+  .btn:hover {
+    background-color: #f84464; /* Change background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card {
+    animation: fadeInUp 0.5s ease;
+  }
+
+
+  .dark-mode {
+    background-color: #1c1c1c;
+    color: white;
+  }
+
+  .dark-mode .navbar {
+    background-color: #000 !important;
+  }
+
+  .dark-mode .card {
+    background-color: #333;
+    color: white;
+  }
+
+  .dark-mode footer {
+    background-color: #222;
+    color: white;
+  }
+
+</style>
