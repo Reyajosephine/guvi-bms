@@ -119,7 +119,7 @@ document.getElementById("submitBooking").addEventListener("click", async () => {
 
   try {
     const response = await fetch(
-      "https://learn-with-guvi-book-my-show-backend.onrender.com/movie/book-movie",
+      "https://learn-with-guvi-book-my-show-backend.onrender.com/movie/book-movies",
       {
         method: "POST",
         headers: {
