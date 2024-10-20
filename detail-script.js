@@ -119,7 +119,7 @@ document.getElementById("submitBooking").addEventListener("click", async () => {
 
   try {
     const response = await fetch(
-      "http://localhost:6000/movie/book-movie",
+      "http://localhost:7000/movie/book-movie",
       {
         method: "POST",
         headers: {
